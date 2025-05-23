@@ -7,3 +7,5 @@ I dont know, we will see where this goes. At the moment this is something random
 //THANK YOU FUTURE ME HAHAHA
 
 これはちょっとむずかしですね
+
+![Alt text](my-app/assets/images/Nyaruko_Holding_React_And_Git_Essentials.jpg)
