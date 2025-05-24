@@ -8,4 +8,4 @@ I dont know, we will see where this goes. At the moment this is something random
 
 これはちょっとむずかしですね
 
-![Alt text](my-app/assets/images/Nyaruko_Holding_React_And_Git_Essentials.jpg)
+![Alt text](kinda-testing/assets/images/Nyaruko_Holding_React_And_Git_Essentials.jpg)
