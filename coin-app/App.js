@@ -86,10 +86,61 @@ const App= () => {
     <View style={styles.container}>
       {/*App  title*/}
       <text style={styles.title}>Coin Flip App</text>
-    </View>
-  )
-}
 
+      {/*Coin image container */}
+      <View style={styles.coinContainer}>
+        {/* show the coin image if coinSide is set*/}
+        {coinSide && (
+          //Animated image for coin flip
+          <Animated.Image source={{
+            //set image based on coin
+            uri: coinSide === "Heads"
+            ?
+            "https://media.geeksforgeeks.org/wp-content/uploads/20250523110516074355/heads.png"
+            :
+            "https://media.geeksforgeeks.org/wp-content/uploads/20250523110416893474/tail.png",  
+          }}
+          style={[
+              styles.coinImage,
+              {
+                //apply flip animation using rotateY
+                transform: [
+                  {
+                    rotateY:
+                    flipAnimation.interpolate({
+                      inputRange : [ 0, 1],
+                      outputRange: ["0deg", "180deg"],
+                    }),
+                  },
+                ],
+              },
+          ]}
+          />
+        )}
+      </View>
+      <View style={styles.countContainer}>
+        <View style={styles.count}>
+          <Text style={styles.countText}>Heads:
+            {headsCounts}</Text>
+        </View>
+        <View style={styles.count}>
+          <Text style={styles.countText}>Tails:{tailsCount}</Text>
+        </View>
+      </View>
+      {/* Row of buttons for flipping and resetting*/}
+      <View style={styles.buttonRow}>
+        <TouchableOpacity style={styles.button} onPress={flipCoin}>
+          <Text style={styles.buttonText}>Flip Coin</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={resetCounts}>
+          <Text style={styles.buttonText}>Reset</Text>
+        </TouchableOpacity>
+      </View>
+    </View>
+  );
+};
+
+//Styles for components
 const styles = StyleSheet.create({
   container: {
     flex: 1,                       // Take up full screen
